@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@layer base {
+  /* LIGHT MODE SEMANTIC DESIGN TOKENS (DEFAULT) */
+  :root {
+    --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --background: #FAFAF8;
+    --navbar-background: rgba(250, 250, 248, 0.95);
+    --surface: #FFFFFF;
+    --surface-subtle: #F5F5F3;
+    --foreground: #111111;
+    --muted-foreground: #5F6368;
+    --border: #E5E5E5;
+    --primary: #0A1D37;
+    --primary-hover: #071426;
+    --primary-foreground: #FFFFFF;
+  }
+
+  /* DARK MODE SEMANTIC DESIGN TOKENS (AFTER TOGGLE) */
+  html.dark {
+    --background: #0A101D;
+    --navbar-background: rgba(10, 16, 29, 0.95);
+    --surface: #131D38;
+    --surface-subtle: #162244;
+    --foreground: #FFFFFF;
+    --muted-foreground: #94A3B8;
+    --border: #1E293B;
+    --primary: #2563EB;
+    --primary-hover: #1D4ED8;
+    --primary-foreground: #FFFFFF;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  *,
+  body,
+  button,
+  input,
+  select,
+  textarea {
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    overflow-x: hidden;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 3px;
+}
